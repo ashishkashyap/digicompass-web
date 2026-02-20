@@ -2,22 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* DigiCompass brand — calm + growth */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --primary: #1E3A8A;
+  --accent: #14B8A6;
+  --muted-foreground: #64748B;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Calm typography hierarchy */
+.prose-heading {
+  letter-spacing: -0.02em;
 }
 
 @layer utilities {
