@@ -41,7 +41,7 @@ export const HOW_IT_WORKS = {
     {
       title: "Kids earn flexibility through progress",
       description:
-        "Approved learning or productive time can unlock bonus minutes — caps you control.",
+        "Approved challenges and productive time can unlock bonus minutes — with caps you control.",
     },
     {
       title: "Nudges reduce friction",
@@ -77,7 +77,7 @@ export const PILLARS = {
     },
   ],
   disclaimer:
-    "Behavior guidance and structure — not content surveillance.",
+    "Designed for behavior guidance and structure — not content surveillance.",
 } as const;
 
 // ——— Comparison: Incentives, Not Just Restrictions ———
@@ -101,19 +101,6 @@ export const COMPARISON = {
       "Fine-grained rules + schedules + categories",
     ],
   },
-} as const;
-
-// ——— Built With Real Families in Mind (trust) ———
-export const TRUST_SECTION = {
-  heading: "Built With Real Families in Mind",
-  paragraph:
-    "Reduce screen-time conflict through predictable boundaries, incentives, and calm guidance.",
-  bullets: [
-    "Structure-first (not surveillance-first)",
-    "Behavior patterns, not private content",
-    "Calm, consistent routines",
-  ],
-  scarcityLine: "Early access is rolling out in small groups.",
 } as const;
 
 // ——— Demo ———

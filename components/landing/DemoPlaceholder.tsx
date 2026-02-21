@@ -21,7 +21,7 @@ export function DemoPlaceholder() {
       <p className="mt-1 text-sm text-muted-foreground mb-4">
         {DEMO.subtitle}
       </p>
-      <div className="rounded-xl border border-slate-200/80 bg-slate-50/80 overflow-hidden shadow-sm max-w-2xl">
+      <div className="rounded-xl border border-slate-200 bg-slate-100/50 overflow-hidden shadow-sm max-w-2xl">
         {/* Browser-like top bar */}
         <div className="flex items-center gap-2 px-4 py-2.5 bg-white border-b border-slate-200">
           <span className="flex h-2.5 w-2.5 rounded-full bg-slate-300" aria-hidden />

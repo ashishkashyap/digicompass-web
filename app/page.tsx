@@ -3,7 +3,6 @@ import { SocialProof } from "@/components/landing/SocialProof";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Pillars } from "@/components/landing/Pillars";
 import { Comparison } from "@/components/landing/Comparison";
-import { TrustSection } from "@/components/landing/TrustSection";
 import { DemoPlaceholder } from "@/components/landing/DemoPlaceholder";
 import { Section } from "@/components/landing/Section";
 import { EarlyAccessStrip } from "@/components/landing/EarlyAccessStrip";
@@ -20,7 +19,6 @@ export default function Home() {
       <HowItWorks />
       <Pillars />
       <Comparison />
-      <TrustSection />
       <DemoPlaceholder />
       <Section id="waitlist" ariaLabelledBy="waitlist-heading">
         <TrackWaitlistView />

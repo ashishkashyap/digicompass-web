@@ -25,7 +25,7 @@ export function Pillars() {
           </article>
         ))}
       </div>
-      <p className="mt-5 text-center text-sm text-muted-foreground/90 max-w-xl mx-auto">
+      <p className="mt-4 text-center text-xs text-muted-foreground max-w-xl mx-auto">
         {PILLARS.disclaimer}
       </p>
     </Section>

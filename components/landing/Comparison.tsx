@@ -6,12 +6,12 @@ export function Comparison() {
     <Section ariaLabelledBy="comparison-heading">
       <h2
         id="comparison-heading"
-        className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-6 prose-heading"
+        className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-5 prose-heading"
       >
         {COMPARISON.heading}
       </h2>
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-sm">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
           <h3 className="text-sm font-semibold text-foreground tracking-tight mb-3">
             {COMPARISON.left.title}
           </h3>
