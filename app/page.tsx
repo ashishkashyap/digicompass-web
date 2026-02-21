@@ -1,19 +1,34 @@
-import { HeroSection } from "@/components/HeroSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { DifferentiatorsSection } from "@/components/DifferentiatorsSection";
-import { DemoSection } from "@/components/DemoSection";
-import { WaitlistSection } from "@/components/WaitlistSection";
-import { FAQSection } from "@/components/FAQSection";
+import { Hero } from "@/components/landing/Hero";
+import { SocialProof } from "@/components/landing/SocialProof";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Pillars } from "@/components/landing/Pillars";
+import { Comparison } from "@/components/landing/Comparison";
+import { TrustSection } from "@/components/landing/TrustSection";
+import { DemoPlaceholder } from "@/components/landing/DemoPlaceholder";
+import { Section } from "@/components/landing/Section";
+import { EarlyAccessStrip } from "@/components/landing/EarlyAccessStrip";
+import { EarlyAccessIncludesStrip } from "@/components/landing/EarlyAccessIncludesStrip";
+import { TrackWaitlistView } from "@/components/landing/TrackWaitlistView";
+import { Waitlist } from "@/components/landing/Waitlist";
+import { FAQ } from "@/components/landing/FAQ";
 
 export default function Home() {
   return (
-    <main className="max-w-5xl mx-auto px-4 flex flex-col flex-1">
-      <HeroSection />
-      <HowItWorksSection />
-      <DifferentiatorsSection />
-      <DemoSection />
-      <WaitlistSection />
-      <FAQSection />
+    <main className="flex flex-col flex-1">
+      <Hero />
+      <SocialProof />
+      <HowItWorks />
+      <Pillars />
+      <Comparison />
+      <TrustSection />
+      <DemoPlaceholder />
+      <Section id="waitlist" ariaLabelledBy="waitlist-heading">
+        <TrackWaitlistView />
+        <EarlyAccessStrip />
+        <EarlyAccessIncludesStrip />
+        <Waitlist />
+      </Section>
+      <FAQ />
     </main>
   );
 }

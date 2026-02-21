@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* DigiCompass brand — calm + growth */
+/* DigiCompass brand — calm + growth, strong contrast */
 :root {
   --background: #F8FAFC;
   --foreground: #0F172A;
   --primary: #1E3A8A;
-  --accent: #14B8A6;
-  --muted-foreground: #64748B;
+  --accent: #0D9488;
+  --muted-foreground: #475569;
 }
 
 body {
@@ -18,9 +18,10 @@ body {
   line-height: 1.6;
 }
 
-/* Calm typography hierarchy */
+/* Typography hierarchy — headings read clear, not washed out */
 .prose-heading {
   letter-spacing: -0.02em;
+  color: var(--foreground);
 }
 
 @layer utilities {
