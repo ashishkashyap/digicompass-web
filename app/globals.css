@@ -24,10 +24,10 @@ body {
   line-height: 1.75;
 }
 
-/* Headings — clear and approachable */
+/* Headings — clear, approachable, strong contrast (avoid washed-out) */
 .prose-heading {
   letter-spacing: -0.015em;
-  color: var(--foreground);
+  color: #1c1917;
 }
 
 /* Section titles — subtle brand accent underline */

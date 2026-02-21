@@ -20,7 +20,9 @@ export default function Home() {
       <HowItWorks />
       <Pillars />
       <Comparison />
-      <DemoPlaceholder />
+      <div className="w-full bg-stone-100/50 border-t border-b border-stone-200/50">
+        <DemoPlaceholder />
+      </div>
       <Section id="waitlist" ariaLabelledBy="waitlist-heading">
         <Reveal>
           <TrackWaitlistView />

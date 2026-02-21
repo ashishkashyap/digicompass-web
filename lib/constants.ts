@@ -4,6 +4,7 @@
 
 // ——— Hero ———
 export const HERO = {
+  kicker: "Structure, not power struggles.",
   heading: "Guide Screen Time With Purpose.",
   subline:
     "DigiCompass helps families build healthier digital habits through structure, incentives, and calm parental guidance.",
@@ -85,24 +86,16 @@ export const PILLARS = {
 // ——— Comparison: Incentives, Not Just Restrictions ———
 export const COMPARISON = {
   heading: "Incentives, Not Just Restrictions.",
-  left: {
-    title: "Traditional Controls",
-    bullets: [
-      "Time runs out → hard stop",
-      "Parents stuck negotiating",
-      "Limited flexibility",
-      "Less habit formation",
-    ],
-  },
-  right: {
-    title: "DigiCompass",
-    bullets: [
-      "Earn bonus minutes via approved activities or productive time",
-      "Nudges guide before limits hit",
-      "Green/yellow/red insights for trends",
-      "Fine-grained rules + schedules + categories",
-    ],
-  },
+  traditional: [
+    "Hard stop when time runs out",
+    "Parents stuck negotiating",
+    "Less habit formation",
+  ],
+  digicompass: [
+    "Earn bonus minutes through approved progress",
+    "Nudges guide before limits hit",
+    "Insights + fine-grained schedules",
+  ],
 } as const;
 
 // ——— Demo ———
@@ -140,6 +133,8 @@ export const WAITLIST = {
   heading: "Join the First 100 Families",
   subline:
     "We're onboarding early families in small groups. Early access includes one month free.",
+  reassuranceLine:
+    "Be among the first families shaping a calmer digital routine.",
   belowButtonLine: "Limited beta spots available.",
   privacyLine: "We'll only email about early access. No spam.",
   emailLabel: "Email",

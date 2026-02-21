@@ -99,7 +99,7 @@ export function Waitlist() {
   }
 
   return (
-    <div className="rounded-3xl border border-stone-200/60 bg-white p-5 sm:p-6 shadow-card max-w-xl">
+    <div className="rounded-3xl border border-stone-200/60 bg-white p-4 sm:p-6 shadow-card max-w-xl">
       <h2
         id="waitlist-heading"
         className="text-xl font-bold text-foreground tracking-tight prose-heading section-title"
@@ -108,6 +108,9 @@ export function Waitlist() {
       </h2>
       <p className="mt-1.5 text-sm text-muted-foreground leading-loose max-w-lg">
         {WAITLIST.subline}
+      </p>
+      <p className="mt-1 text-sm text-foreground/85 leading-relaxed max-w-lg">
+        {WAITLIST.reassuranceLine}
       </p>
       <form
         onSubmit={handleSubmit}

@@ -23,6 +23,9 @@ export function Hero() {
   return (
     <Section ariaLabelledBy="hero-heading" className="pt-11 sm:pt-10 hero-bg overflow-hidden">
       <div className="max-w-3xl">
+        <p className="text-sm text-muted-foreground tracking-tight mb-1.5">
+          {HERO.kicker}
+        </p>
         <h1
           id="hero-heading"
           className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground tracking-tight leading-[1.12] prose-heading"
