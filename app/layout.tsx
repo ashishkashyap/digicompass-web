@@ -10,6 +10,7 @@ const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
