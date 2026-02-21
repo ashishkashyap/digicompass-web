@@ -98,7 +98,7 @@ export function Waitlist() {
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm max-w-xl">
+    <div className="rounded-2xl border border-stone-200 bg-white p-5 sm:p-6 shadow-sm max-w-xl">
       <h2
         id="waitlist-heading"
         className="text-xl font-semibold text-foreground tracking-tight prose-heading"
@@ -132,7 +132,7 @@ export function Waitlist() {
             disabled={status === "loading"}
             aria-invalid={!!errorMessage}
             aria-describedby={errorMessage ? "waitlist-email-error" : undefined}
-            className={`w-full rounded-lg border px-3 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-slate-50 ${errorMessage ? "border-red-400" : "border-slate-300"}`}
+            className={`w-full rounded-xl border px-3 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-stone-50 ${errorMessage ? "border-red-400" : "border-stone-300"}`}
           />
         </div>
         <div>
@@ -150,7 +150,7 @@ export function Waitlist() {
             name="childAgeRange"
             disabled={status === "loading"}
             aria-label={`${WAITLIST.childAgeLabel} ${WAITLIST.childAgeOptional}`}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-foreground bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-slate-50"
+            className="w-full rounded-xl border border-stone-300 px-3 py-2.5 text-foreground bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-stone-50"
           >
             {CHILD_AGE_OPTIONS.map((opt) => (
               <option key={opt.value || "empty"} value={opt.value}>
@@ -174,7 +174,7 @@ export function Waitlist() {
             name="biggestChallenge"
             disabled={status === "loading"}
             aria-label={`${WAITLIST.biggestChallengeLabel} ${WAITLIST.biggestChallengeOptional}`}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-foreground bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-slate-50"
+            className="w-full rounded-xl border border-stone-300 px-3 py-2.5 text-foreground bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-stone-50"
           >
             {CHALLENGE_OPTIONS.map((opt) => (
               <option key={opt.value || "empty"} value={opt.value}>
@@ -195,7 +195,7 @@ export function Waitlist() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full rounded-lg bg-accent text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+          className="w-full rounded-xl bg-accent text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
         >
           {status === "loading" ? WAITLIST.submitLoading : WAITLIST.submitLabel}
         </button>

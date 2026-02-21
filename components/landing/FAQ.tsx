@@ -34,21 +34,21 @@ export function FAQ() {
           return (
             <div
               key={i}
-              className="rounded-xl border border-slate-200/80 bg-white shadow-sm overflow-hidden"
+              className="rounded-2xl border border-stone-200 bg-white shadow-sm overflow-hidden"
             >
               <dt>
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                   onKeyDown={(e) => handleKeyDown(e, i)}
-                  className="w-full flex items-center justify-between gap-3 text-left px-4 sm:px-5 py-4 text-sm font-semibold text-foreground hover:bg-slate-50/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                  className="w-full flex items-center justify-between gap-3 text-left px-4 sm:px-5 py-3.5 text-sm font-semibold text-foreground hover:bg-stone-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${i}`}
                   id={`faq-question-${i}`}
                 >
                   <span>{item.q}</span>
                   <span
-                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-stone-100 text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`}
                     aria-hidden
                   >
                     <svg
@@ -71,7 +71,7 @@ export function FAQ() {
                 id={`faq-answer-${i}`}
                 role="region"
                 aria-labelledby={`faq-question-${i}`}
-                className={`border-t border-slate-100 ${isOpen ? "block" : "hidden"}`}
+                className={`border-t border-stone-100 ${isOpen ? "block" : "hidden"}`}
               >
                 <p className="px-4 sm:px-5 py-2.5 text-sm text-muted-foreground leading-relaxed">
                   {item.a}

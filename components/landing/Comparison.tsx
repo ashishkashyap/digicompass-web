@@ -11,7 +11,7 @@ export function Comparison() {
         {COMPARISON.heading}
       </h2>
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
+        <div className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-sm">
           <h3 className="text-sm font-semibold text-foreground tracking-tight mb-3">
             {COMPARISON.left.title}
           </h3>
@@ -22,7 +22,7 @@ export function Comparison() {
                 className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed"
               >
                 <span
-                  className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-slate-300"
+                  className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-stone-300"
                   aria-hidden
                 />
                 {text}
@@ -30,7 +30,7 @@ export function Comparison() {
             ))}
           </ul>
         </div>
-        <div className="rounded-xl border-2 border-accent/40 bg-accent/[0.07] p-4 sm:p-5 shadow-sm">
+        <div className="rounded-2xl border-2 border-accent/40 bg-accent/[0.07] p-4 sm:p-5 shadow-sm">
           <h3 className="text-sm font-semibold text-foreground tracking-tight mb-3">
             {COMPARISON.right.title}
           </h3>

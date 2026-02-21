@@ -41,14 +41,14 @@ export function Hero() {
           <button
             type="button"
             onClick={handleJoinEarlyAccess}
-            className="rounded-lg bg-accent text-white px-5 py-2.5 sm:py-3 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="rounded-xl bg-accent text-white px-5 py-2.5 sm:py-3 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             {HERO.ctaPrimary}
           </button>
           <button
             type="button"
             onClick={handleSeeHowItWorks}
-            className="rounded-lg border border-slate-300 bg-white text-foreground px-5 py-2.5 sm:py-3 text-sm font-medium hover:bg-slate-50 hover:border-slate-400 active:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="rounded-xl border-2 border-stone-300 bg-white text-foreground px-5 py-2.5 sm:py-3 text-sm font-medium hover:bg-stone-50 hover:border-stone-400 active:bg-stone-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             {HERO.ctaSecondary}
           </button>

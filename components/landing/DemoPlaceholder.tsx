@@ -21,17 +21,17 @@ export function DemoPlaceholder() {
       <p className="mt-1 text-sm text-muted-foreground mb-4">
         {DEMO.subtitle}
       </p>
-      <div className="rounded-xl border border-slate-200 bg-slate-100/50 overflow-hidden shadow-sm max-w-2xl">
+      <div className="rounded-2xl border border-stone-200 bg-stone-100/60 overflow-hidden shadow-sm max-w-2xl">
         {/* Browser-like top bar */}
-        <div className="flex items-center gap-2 px-4 py-2.5 bg-white border-b border-slate-200">
-          <span className="flex h-2.5 w-2.5 rounded-full bg-slate-300" aria-hidden />
-          <span className="flex h-2.5 w-2.5 rounded-full bg-slate-300" aria-hidden />
-          <span className="flex h-2.5 w-2.5 rounded-full bg-slate-300" aria-hidden />
+        <div className="flex items-center gap-2 px-4 py-2.5 bg-white border-b border-stone-200">
+          <span className="flex h-2.5 w-2.5 rounded-full bg-stone-300" aria-hidden />
+          <span className="flex h-2.5 w-2.5 rounded-full bg-stone-300" aria-hidden />
+          <span className="flex h-2.5 w-2.5 rounded-full bg-stone-300" aria-hidden />
         </div>
         {/* Video frame with play icon */}
         <div className="aspect-video flex flex-col items-center justify-center gap-2 min-h-[160px] sm:min-h-[200px]">
           <div
-            className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm"
+            className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white border border-stone-200 shadow-sm"
             aria-hidden
           >
             <svg
@@ -60,7 +60,7 @@ export function DemoPlaceholder() {
         <button
           type="button"
           onClick={scrollToWaitlist}
-          className="rounded-lg bg-accent text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="rounded-xl bg-accent text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           {DEMO.ctaLabel}
         </button>
