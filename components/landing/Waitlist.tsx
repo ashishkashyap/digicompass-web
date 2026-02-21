@@ -3,6 +3,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { track } from "@/lib/track";
+import { Button } from "@/components/ui/Button";
 import {
   WAITLIST,
   CHILD_AGE_OPTIONS,
@@ -98,14 +99,14 @@ export function Waitlist() {
   }
 
   return (
-    <div className="rounded-2xl border border-stone-200 bg-white p-5 sm:p-6 shadow-sm max-w-xl">
+    <div className="rounded-3xl border border-stone-200/60 bg-white p-5 sm:p-6 shadow-card max-w-xl">
       <h2
         id="waitlist-heading"
-        className="text-xl font-semibold text-foreground tracking-tight prose-heading"
+        className="text-xl font-bold text-foreground tracking-tight prose-heading section-title"
       >
         {WAITLIST.heading}
       </h2>
-      <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+      <p className="mt-1.5 text-sm text-muted-foreground leading-loose max-w-lg">
         {WAITLIST.subline}
       </p>
       <form
@@ -192,18 +193,19 @@ export function Waitlist() {
             {errorMessage}
           </p>
         )}
-        <button
+        <Button
           type="submit"
+          variant="primary"
+          fullWidth
           disabled={status === "loading"}
-          className="w-full rounded-xl bg-accent text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
         >
           {status === "loading" ? WAITLIST.submitLoading : WAITLIST.submitLabel}
-        </button>
+        </Button>
       </form>
-      <p className="mt-3 text-xs text-muted-foreground/90 text-center">
+      <p className="mt-3 text-xs text-muted-foreground/90 max-w-md leading-relaxed">
         {WAITLIST.belowButtonLine}
       </p>
-      <p className="mt-2 text-xs text-muted-foreground/80 text-center">
+      <p className="mt-2 text-xs text-muted-foreground/80 max-w-md leading-relaxed">
         {WAITLIST.privacyLine}
       </p>
     </div>

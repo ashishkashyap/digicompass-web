@@ -24,7 +24,7 @@ export function FAQ() {
     >
       <h2
         id="faq-heading"
-        className="text-xl font-semibold text-foreground tracking-tight mb-5 prose-heading"
+        className="text-xl font-bold text-foreground tracking-tight mb-5 prose-heading section-title"
       >
         FAQ
       </h2>
@@ -34,7 +34,7 @@ export function FAQ() {
           return (
             <div
               key={i}
-              className="rounded-2xl border border-stone-200 bg-white shadow-sm overflow-hidden"
+              className="rounded-3xl border border-stone-200/60 bg-white shadow-card overflow-hidden"
             >
               <dt>
                 <button
@@ -48,22 +48,18 @@ export function FAQ() {
                 >
                   <span>{item.q}</span>
                   <span
-                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-stone-100 text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-stone-100 text-muted-foreground"
                     aria-hidden
                   >
-                    <svg
-                      className="h-3 w-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    {isOpen ? (
+                      <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                      </svg>
+                    ) : (
+                      <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
                   </span>
                 </button>
               </dt>
@@ -73,7 +69,7 @@ export function FAQ() {
                 aria-labelledby={`faq-question-${i}`}
                 className={`border-t border-stone-100 ${isOpen ? "block" : "hidden"}`}
               >
-                <p className="px-4 sm:px-5 py-2.5 text-sm text-muted-foreground leading-relaxed">
+                <p className="px-4 sm:px-5 py-2.5 text-sm text-muted-foreground leading-loose max-w-xl">
                   {item.a}
                 </p>
               </dd>

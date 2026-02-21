@@ -15,7 +15,7 @@ export function SiteFooter() {
             Updates
           </Link>
         </nav>
-        <p className="text-sm text-muted-foreground max-w-xl leading-relaxed">
+        <p className="text-sm text-muted-foreground max-w-lg leading-loose">
           Pre-launch site — features and availability may change during beta.
         </p>
       </div>

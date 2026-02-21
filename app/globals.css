@@ -15,13 +15,80 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-sans), system-ui, sans-serif;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+
+/* Prose blocks — tighter measure, easier to read */
+.prose-p {
+  max-width: 36rem;
+  line-height: 1.75;
 }
 
 /* Headings — clear and approachable */
 .prose-heading {
   letter-spacing: -0.015em;
   color: var(--foreground);
+}
+
+/* Section titles — subtle brand accent underline */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+/* Hero: subtle radial depth — low opacity, natural fade, no visible cutoff */
+.hero-bg {
+  position: relative;
+}
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 85% 55% at 50% -10%,
+    rgba(13, 148, 136, 0.045) 0%,
+    rgba(13, 148, 136, 0.02) 35%,
+    transparent 62%
+  );
+  pointer-events: none;
+}
+.hero-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* One tinted mid-page section: calm depth, fades into background */
+.mid-section-tint {
+  position: relative;
+}
+.mid-section-tint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(13, 148, 136, 0.018) 25%,
+    rgba(13, 148, 136, 0.022) 50%,
+    rgba(13, 148, 136, 0.018) 75%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+.mid-section-tint > * {
+  position: relative;
+  z-index: 1;
 }
 
 @layer utilities {

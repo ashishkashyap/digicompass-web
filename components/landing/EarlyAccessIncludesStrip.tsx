@@ -9,7 +9,7 @@ export function EarlyAccessIncludesStrip() {
       <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-muted-foreground" role="list">
         {EARLY_ACCESS_INCLUDES.items.map((item, i) => (
           <li key={i} className="flex items-center gap-1.5">
-            <span className="flex h-1 w-1 shrink-0 rounded-full bg-accent/80" aria-hidden />
+            <span className="flex h-1 w-1 shrink-0 rounded-full bg-stone-400" aria-hidden />
             <span>{item.text}</span>
             {item.rollingOut && (
               <span className="text-[10px] text-muted-foreground/75 font-normal normal-case italic">

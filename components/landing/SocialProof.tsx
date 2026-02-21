@@ -3,7 +3,7 @@ import { SOCIAL_PROOF } from "@/lib/constants";
 
 export function SocialProof() {
   return (
-    <Section ariaLabelledBy="social-proof-heading" className="py-8">
+    <Section ariaLabelledBy="social-proof-heading" className="py-6 sm:py-7">
       <h2
         id="social-proof-heading"
         className="sr-only"
@@ -17,7 +17,7 @@ export function SocialProof() {
         {SOCIAL_PROOF.signals.map((text, i) => (
           <li key={i} className="flex items-center gap-2">
             <span
-              className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-accent/80"
+              className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-stone-400"
               aria-hidden
             />
             {text}

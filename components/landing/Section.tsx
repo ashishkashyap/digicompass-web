@@ -18,7 +18,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`max-w-5xl mx-auto px-4 py-10 sm:py-12 ${id ? "scroll-mt-24" : ""} ${className}`.trim()}
+      className={`max-w-5xl mx-auto px-4 py-8 sm:py-9 ${id ? "scroll-mt-24" : ""} ${className}`.trim()}
       {...(ariaLabelledBy ? { "aria-labelledby": ariaLabelledBy } : {})}
     >
       {children}

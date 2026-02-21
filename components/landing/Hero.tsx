@@ -2,6 +2,7 @@
 
 import { track } from "@/lib/track";
 import { Section } from "@/components/landing/Section";
+import { Button } from "@/components/ui/Button";
 import { HERO } from "@/lib/constants";
 
 export function Hero() {
@@ -20,44 +21,40 @@ export function Hero() {
   };
 
   return (
-    <Section ariaLabelledBy="hero-heading" className="pt-14 sm:pt-12">
+    <Section ariaLabelledBy="hero-heading" className="pt-11 sm:pt-10 hero-bg overflow-hidden">
       <div className="max-w-3xl">
         <h1
           id="hero-heading"
-          className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold text-foreground tracking-tight leading-[1.2] prose-heading"
+          className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground tracking-tight leading-[1.12] prose-heading"
         >
           {HERO.heading}
         </h1>
-        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-loose max-w-xl">
           {HERO.subline}
         </p>
-        <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed max-w-2xl">
-          {HERO.clarifier}
-        </p>
+        <div className="mt-2.5 space-y-1.5">
+          {HERO.clarifierLines.map((line, i) => (
+            <p key={i} className="text-sm text-muted-foreground leading-loose max-w-xl">
+              {line}
+            </p>
+          ))}
+        </div>
         <p className="mt-3 text-base font-medium text-foreground italic">
           {HERO.emotionalLine}
         </p>
         <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            onClick={handleJoinEarlyAccess}
-            className="rounded-xl bg-accent text-white px-5 py-2.5 sm:py-3 text-sm font-semibold shadow-sm hover:bg-accent/90 hover:shadow active:bg-accent/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
+          <Button variant="primary" size="lg" onClick={handleJoinEarlyAccess}>
             {HERO.ctaPrimary}
-          </button>
-          <button
-            type="button"
-            onClick={handleSeeHowItWorks}
-            className="rounded-xl border-2 border-stone-300 bg-white text-foreground px-5 py-2.5 sm:py-3 text-sm font-medium hover:bg-stone-50 hover:border-stone-400 active:bg-stone-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
+          </Button>
+          <Button variant="secondary" onClick={handleSeeHowItWorks}>
             {HERO.ctaSecondary}
-          </button>
+          </Button>
         </div>
         <ul className="mt-5 space-y-1.5" role="list">
           {HERO.bullets.map((text, i) => (
             <li
               key={i}
-              className="flex items-center gap-2.5 text-sm text-muted-foreground leading-relaxed"
+              className="flex items-center gap-2.5 text-sm text-muted-foreground leading-loose"
             >
               <span
                 className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-accent mt-0.5"

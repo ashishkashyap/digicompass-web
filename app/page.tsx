@@ -5,6 +5,7 @@ import { Pillars } from "@/components/landing/Pillars";
 import { Comparison } from "@/components/landing/Comparison";
 import { DemoPlaceholder } from "@/components/landing/DemoPlaceholder";
 import { Section } from "@/components/landing/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { EarlyAccessStrip } from "@/components/landing/EarlyAccessStrip";
 import { EarlyAccessIncludesStrip } from "@/components/landing/EarlyAccessIncludesStrip";
 import { TrackWaitlistView } from "@/components/landing/TrackWaitlistView";
@@ -21,10 +22,12 @@ export default function Home() {
       <Comparison />
       <DemoPlaceholder />
       <Section id="waitlist" ariaLabelledBy="waitlist-heading">
-        <TrackWaitlistView />
-        <EarlyAccessStrip />
-        <EarlyAccessIncludesStrip />
-        <Waitlist />
+        <Reveal>
+          <TrackWaitlistView />
+          <EarlyAccessStrip />
+          <EarlyAccessIncludesStrip />
+          <Waitlist />
+        </Reveal>
       </Section>
       <FAQ />
     </main>

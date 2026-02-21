@@ -7,8 +7,10 @@ export const HERO = {
   heading: "Guide Screen Time With Purpose.",
   subline:
     "DigiCompass helps families build healthier digital habits through structure, incentives, and calm parental guidance.",
-  clarifier:
-    "Set limits and schedules. Kids earn flexibility through approved learning or productive time. Nudges guide in the moment; parents see green/yellow/red insights.",
+  clarifierLines: [
+    "Set limits and schedules. Kids earn flexibility through approved learning or productive time.",
+    "Nudges guide in the moment; parents see green/yellow/red insights.",
+  ],
   emotionalLine: "Screen time doesn't have to be a daily battle.",
   bullets: [
     "Incentives + nudges (not just blocking)",

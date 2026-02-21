@@ -1,12 +1,14 @@
 import { Section } from "@/components/landing/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { PILLARS } from "@/lib/constants";
 
 export function Pillars() {
   return (
-    <Section ariaLabelledBy="pillars-heading">
+    <Section ariaLabelledBy="pillars-heading" className="mid-section-tint pt-12 sm:pt-14">
+      <Reveal>
       <h2
         id="pillars-heading"
-        className="text-xl font-semibold text-foreground tracking-tight mb-5 prose-heading"
+        className="text-xl font-bold text-foreground tracking-tight mb-5 prose-heading section-title"
       >
         {PILLARS.heading}
       </h2>
@@ -14,20 +16,21 @@ export function Pillars() {
         {PILLARS.items.map((item, i) => (
           <article
             key={i}
-            className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-sm hover:shadow transition-shadow"
+            className="rounded-3xl border border-stone-200/60 bg-white p-5 sm:p-6 shadow-card transition-shadow duration-200"
           >
-            <h3 className="text-base font-semibold text-foreground tracking-tight">
+            <h3 className="text-base font-medium text-foreground tracking-tight">
               {item.title}
             </h3>
-            <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-1.5 text-sm text-muted-foreground leading-loose">
               {item.description}
             </p>
           </article>
         ))}
       </div>
-      <p className="mt-4 text-center text-xs text-muted-foreground max-w-xl mx-auto">
+      <p className="mt-4 text-xs text-muted-foreground max-w-lg leading-relaxed">
         {PILLARS.disclaimer}
       </p>
+      </Reveal>
     </Section>
   );
 }

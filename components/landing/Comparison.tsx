@@ -6,20 +6,20 @@ export function Comparison() {
     <Section ariaLabelledBy="comparison-heading">
       <h2
         id="comparison-heading"
-        className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-5 prose-heading"
+        className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-5 prose-heading section-title"
       >
         {COMPARISON.heading}
       </h2>
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-sm">
-          <h3 className="text-sm font-semibold text-foreground tracking-tight mb-3">
+        <div className="rounded-3xl border border-stone-200/60 bg-white p-5 sm:p-6 shadow-card">
+          <h3 className="text-sm font-medium text-foreground tracking-tight mb-3">
             {COMPARISON.left.title}
           </h3>
           <ul className="space-y-2" role="list">
             {COMPARISON.left.bullets.map((text, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed"
+                className="flex items-start gap-2 text-sm text-muted-foreground leading-loose"
               >
                 <span
                   className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-stone-300"
@@ -30,15 +30,15 @@ export function Comparison() {
             ))}
           </ul>
         </div>
-        <div className="rounded-2xl border-2 border-accent/40 bg-accent/[0.07] p-4 sm:p-5 shadow-sm">
-          <h3 className="text-sm font-semibold text-foreground tracking-tight mb-3">
+        <div className="rounded-3xl border border-accent/30 bg-accent/[0.06] p-5 sm:p-6 shadow-card">
+          <h3 className="text-sm font-medium text-foreground tracking-tight mb-3">
             {COMPARISON.right.title}
           </h3>
           <ul className="space-y-2" role="list">
             {COMPARISON.right.bullets.map((text, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed"
+                className="flex items-start gap-2 text-sm text-muted-foreground leading-loose"
               >
                 <span
                   className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
