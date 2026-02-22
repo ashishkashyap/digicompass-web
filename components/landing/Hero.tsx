@@ -26,7 +26,7 @@ export function Hero() {
   };
 
   return (
-    <Section ariaLabelledBy="hero-heading" className="pt-11 sm:pt-10 hero-bg overflow-hidden">
+    <Section ariaLabelledBy="hero-heading" className="pt-8 sm:pt-9 hero-bg overflow-hidden">
       <div className="max-w-3xl">
         <p className="text-sm text-muted-foreground tracking-tight mb-1.5">
           {HERO.kicker}
@@ -37,20 +37,20 @@ export function Hero() {
         >
           {HERO_VARIANT === "structure" ? HERO.headingStructure : HERO.heading}
         </h1>
-        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-loose max-w-xl">
+        <p className="mt-2.5 sm:mt-3 text-base sm:text-lg text-muted-foreground leading-loose max-w-xl">
           {HERO.subline}
         </p>
-        <div className="mt-2.5 space-y-1.5">
+        <div className="mt-2 space-y-1.5">
           {HERO.clarifierLines.map((line, i) => (
             <p key={i} className="text-sm text-muted-foreground leading-loose max-w-xl">
               {line}
             </p>
           ))}
         </div>
-        <p className="mt-3 text-base font-medium text-foreground italic">
+        <p className="mt-2.5 text-base font-medium text-foreground italic">
           {HERO.emotionalLine}
         </p>
-        <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
+        <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3">
           <Button variant="primary" size="lg" onClick={handleJoinEarlyAccess}>
             {HERO.ctaPrimary}
           </Button>
@@ -61,7 +61,7 @@ export function Hero() {
             {HERO.ctaSecondary}
           </Button>
         </div>
-        <ul className="mt-5 space-y-1.5" role="list">
+        <ul className="mt-4 space-y-1.5" role="list">
           {HERO.bullets.map((text, i) => (
             <li
               key={i}

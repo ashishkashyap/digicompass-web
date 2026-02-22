@@ -26,9 +26,10 @@ export const HERO = {
   ctaSecondary: "See how it works",
 } as const;
 
-// ——— Social proof (trust signals, no testimonials) ———
+// ——— Social proof: "Why we're building this" + trust signals ———
 export const SOCIAL_PROOF = {
-  heading: null as string | null,
+  whyHeading: "Why we're building this",
+  whyLine: "70% of parents say screen time battles are a daily struggle. We're building DigiCompass to help families find a calmer path — with structure and incentives, not just limits.",
   signals: [
     "Privacy-first — we don't read messages",
     "No content surveillance",
@@ -107,6 +108,7 @@ export const COMPARISON = {
 export const DEMO = {
   heading: "See DigiCompass in Action",
   subtitle: "Watch a 60–90 second walkthrough.",
+  challengeExample: "Example: 20 mins of Khan Academy = 10 mins of YouTube.",
   previewBullets: [
     "Nudges in the moment",
     "Green/yellow/red parent insights",

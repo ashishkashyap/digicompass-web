@@ -6,10 +6,13 @@ export function SocialProof() {
     <Section ariaLabelledBy="social-proof-heading" className="py-6 sm:py-7">
       <h2
         id="social-proof-heading"
-        className="sr-only"
+        className="text-base font-bold text-foreground tracking-tight mb-2"
       >
-        Why families trust DigiCompass
+        {SOCIAL_PROOF.whyHeading}
       </h2>
+      <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mb-4">
+        {SOCIAL_PROOF.whyLine}
+      </p>
       <ul
         className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
         role="list"

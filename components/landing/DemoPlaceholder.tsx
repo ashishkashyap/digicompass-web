@@ -123,6 +123,9 @@ export function DemoPlaceholder() {
           </div>
         </div>
       </div>
+      <p className="mt-3 sm:mt-4 text-sm text-muted-foreground italic max-w-xl">
+        {DEMO.challengeExample}
+      </p>
       <ul className="mt-3 sm:mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted-foreground" role="list">
         {DEMO.previewBullets.map((text, i) => (
           <li key={i} className="flex items-center gap-1.5">
