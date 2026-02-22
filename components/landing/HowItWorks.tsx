@@ -21,9 +21,18 @@ export function HowItWorks() {
             <h3 className="text-base font-medium text-foreground tracking-tight">
               {card.title}
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-loose">
-              {card.description}
-            </p>
+            {card.description ? (
+              <p className="mt-2 text-sm text-muted-foreground leading-loose">
+                {card.description}
+              </p>
+            ) : null}
+            {"bullets" in card && card.bullets && card.bullets.length > 0 && (
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                {card.bullets.map((b, j) => (
+                  <li key={j}>{b}</li>
+                ))}
+              </ul>
+            )}
           </article>
         ))}
       </div>

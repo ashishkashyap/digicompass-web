@@ -21,9 +21,18 @@ export function Pillars() {
             <h3 className="text-base font-medium text-foreground tracking-tight">
               {item.title}
             </h3>
-            <p className="mt-1.5 text-sm text-muted-foreground leading-loose">
-              {item.description}
-            </p>
+            {item.description ? (
+              <p className="mt-1.5 text-sm text-muted-foreground leading-loose">
+                {item.description}
+              </p>
+            ) : null}
+            {"bullets" in item && item.bullets && item.bullets.length > 0 && (
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                {item.bullets.map((b, j) => (
+                  <li key={j}>{b}</li>
+                ))}
+              </ul>
+            )}
           </article>
         ))}
       </div>

@@ -10,14 +10,14 @@ export const HERO = {
   heading: "Guide Screen Time With Purpose.",
   headingStructure: "Guide Screen Time With Structure — Not Power Struggles.",
   subline:
-    "DigiCompass helps families build healthier digital habits through structure, incentives, and calm parental guidance.",
+    "Healthier digital habits through structure, incentives, and calm guidance.",
   clarifierLines: [
-    "Set limits and schedules. Kids earn flexibility through approved learning or productive time.",
-    "Nudges guide in the moment; parents see green/yellow/red insights.",
+    "e.g. 20 mins learning = 10 mins YouTube. Set limits; you control caps.",
+    "Nudges in the moment; green/yellow/red insights for parents.",
   ],
   emotionalLine: "Screen time doesn't have to be a daily battle.",
   bullets: [
-    "Incentives + nudges (not just blocking)",
+    "Earn time for learning + nudges",
     "Green / yellow / red parent insights",
     "Fine-grained rules + schedules + categories",
     "No content surveillance",
@@ -37,24 +37,41 @@ export const SOCIAL_PROOF = {
   ],
 } as const;
 
+// ——— Nudges (shared intro + examples for skimmable section) ———
+export const NUDGES = {
+  intro: "Smart prompts before limits hit — kids can adjust without a hard stop.",
+  examples: [
+    "“10 mins left” warning",
+    "“Earn more time” when they do learning",
+    "Wind-down reminder before bed",
+    "Category almost used up",
+    "Optional heads-up for parents",
+  ],
+} as const;
+
 // ——— How it works ———
 export const HOW_IT_WORKS = {
   heading: "How it works",
   steps: [
     {
       title: "Set boundaries that match your routine",
-      description:
-        "Create daily/weekly limits, time windows, and category rules (entertainment, games, music, and more).",
+      description: "",
+      bullets: [
+        "Per app & per domain",
+        "Categories (e.g. entertainment, games)",
+        "Weekday vs weekend",
+        "Intra-day time windows",
+      ],
     },
     {
-      title: "Kids earn flexibility through progress",
+      title: "Earn time for learning",
       description:
-        "Approved challenges and productive time can unlock bonus minutes — with caps you control.",
+        "e.g. 20 mins Khan Academy = 10 mins YouTube. Caps and cooldowns you control.",
     },
     {
-      title: "Nudges help reduce friction",
-      description:
-        "Gentle reminders and choice prompts help kids stop earlier, switch tasks, or earn time — to help avoid conflict.",
+      title: "Nudges",
+      description: NUDGES.intro,
+      bullets: NUDGES.examples,
     },
   ],
 } as const;
@@ -66,40 +83,56 @@ export const PILLARS = {
     {
       title: "Incentives",
       description:
-        "Turn fun time into something earned — not endlessly negotiated.",
+        "Earn bonus time for learning; caps you control.",
+      bullets: [
+        "e.g. 20 mins learning = 10 mins YouTube",
+        "Caps and cooldowns you set",
+        "You choose what counts as learning",
+      ],
     },
     {
       title: "Nudges",
-      description:
-        "Guidance in the moment: heads-ups, stopping points, and better choices.",
+      description: NUDGES.intro,
+      bullets: NUDGES.examples,
     },
     {
       title: "Insights",
       description:
-        "Green/yellow/red signals show patterns and trends at a glance.",
+        "Green, yellow, red for usage patterns.",
+      bullets: [
+        "Green: on track, within your goals",
+        "Yellow: approaching limits or shifting patterns",
+        "Red: over limits or needs attention",
+      ],
     },
     {
       title: "Fine-Grained Control",
-      description:
-        "Per-site/app limits plus schedules and parent-defined categories.",
+      description: "",
+      bullets: [
+        "Per app",
+        "Per domain",
+        "Categories (e.g. entertainment, games)",
+        "Weekday vs weekend rules",
+        "Intra-day time windows",
+      ],
     },
   ],
   disclaimer:
-    "Designed for behavior guidance and structure — not content surveillance.",
+    "Structure and guidance only — no content surveillance.",
 } as const;
 
 // ——— Comparison: Incentives, Not Just Restrictions ———
 export const COMPARISON = {
   heading: "Incentives, Not Just Restrictions.",
-  intro: "Blocking stops behavior. Incentives + nudges help shape habits.",
+  intro: "e.g. 20 mins learning = 10 mins YouTube. You set caps and cooldowns.",
   traditional: [
     "Hard stop when time runs out",
     "Parents stuck negotiating",
     "Less habit formation",
   ],
   digicompass: [
-    "Earn bonus minutes through approved progress",
-    "Nudges guide before limits hit",
+    "Earn bonus time for learning",
+    "Nudges before limits hit",
     "Insights + fine-grained schedules",
   ],
 } as const;
@@ -108,7 +141,7 @@ export const COMPARISON = {
 export const DEMO = {
   heading: "See DigiCompass in Action",
   subtitle: "Watch a 60–90 second walkthrough.",
-  challengeExample: "Example: 20 mins of Khan Academy = 10 mins of YouTube.",
+  challengeExample: "e.g. 20 mins Khan Academy = 10 mins YouTube.",
   previewBullets: [
     "Nudges in the moment",
     "Green/yellow/red parent insights",
@@ -117,10 +150,10 @@ export const DEMO = {
   ctaLabel: "Join Early Access",
   reinforcementTitle: "Why families are joining early access",
   reinforcementBullets: [
-    "Incentive-based screen time (earn, don't just block)",
-    "Gentle nudges before limits hit",
-    "Green / Yellow / Red behavior insights",
-    "Fine-grained control per site/app + schedules",
+    "Earn bonus time for learning",
+    "Nudges before limits hit",
+    "Green / yellow / red insights",
+    "Fine-grained control + schedules",
     "No content surveillance",
   ],
   reinforcementCtaCopy: "One month free at launch.",
@@ -147,9 +180,9 @@ export const EARLY_ACCESS_INCLUDES = {
 export const WAITLIST = {
   heading: "Join the First 100 Families",
   subline:
-    "We're onboarding early families in small groups. Early access includes one month free.",
+    "Onboarding in small groups. One month free.",
   reassuranceLine:
-    "Be among the first families shaping a calmer digital routine.",
+    "Among the first to shape a calmer digital routine.",
   belowButtonLine: "Limited beta spots available.",
   privacyLine: "We'll only email about early access. No spam.",
   emailLabel: "Email",
@@ -197,38 +230,38 @@ export const CHALLENGE_OPTIONS: { value: string; label: string }[] = [
 export const FAQ_ITEMS = [
   {
     q: "Is DigiCompass a monitoring tool?",
-    a: "No. We focus on guidance and structure — no content surveillance.",
+    a: "No. We focus on time and habits, not monitoring.",
   },
   {
     q: "Does it read my child's messages?",
-    a: "No. We focus on screen time structure and habits.",
+    a: "No. Screen time and habits only.",
   },
   {
     q: "When will beta launch?",
-    a: "We're onboarding families in small groups.",
+    a: "Small groups first; we'll expand with feedback.",
   },
   {
     q: "What are nudges?",
-    a: "Gentle, timely prompts that help kids make better choices and can help reduce conflict.",
+    a: "Smart prompts before limits hit so kids can adjust without a hard stop.",
   },
   {
     q: "What do green/yellow/red insights mean?",
-    a: "Simple signals for patterns and trends — for guidance, not content surveillance.",
+    a: "Patterns and trends for guidance, not surveillance.",
   },
   {
     q: "Can I control specific sites/apps and categories?",
-    a: "Yes. Per-site/app rules, parent-defined categories, and daily/weekly schedules.",
+    a: "Yes. Per-site/app rules, categories, and schedules.",
   },
   {
     q: "Does DigiCompass read messages or private content?",
-    a: "No. We focus on time structure and behavior patterns, not private content.",
+    a: "No. Time and behavior only, not private content.",
   },
   {
     q: "Is DigiCompass a replacement for traditional parental control apps?",
-    a: "It can complement them with an earning-and-guidance model.",
+    a: "It can complement them — earning and guidance.",
   },
   {
     q: "Will it work across devices?",
-    a: "Early access is rolling out in stages; platform support will expand with feedback.",
+    a: "Rolling out in stages; more platforms with feedback.",
   },
 ] as const;
