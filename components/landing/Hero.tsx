@@ -20,6 +20,11 @@ export function Hero() {
     scrollTo("how")();
   };
 
+  const handleWatchVideo = () => {
+    track("cta_click_watch_video", { location: "hero" });
+    scrollTo("demo")();
+  };
+
   return (
     <Section ariaLabelledBy="hero-heading" className="pt-11 sm:pt-10 hero-bg overflow-hidden">
       <div className="max-w-3xl">
@@ -48,6 +53,9 @@ export function Hero() {
         <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
           <Button variant="primary" size="lg" onClick={handleJoinEarlyAccess}>
             {HERO.ctaPrimary}
+          </Button>
+          <Button variant="secondary" onClick={handleWatchVideo}>
+            Watch Video
           </Button>
           <Button variant="secondary" onClick={handleSeeHowItWorks}>
             {HERO.ctaSecondary}

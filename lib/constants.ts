@@ -101,8 +101,7 @@ export const COMPARISON = {
 // ——— Demo ———
 export const DEMO = {
   heading: "See DigiCompass in Action",
-  subtitle: "A 60–90 second walkthrough is coming soon.",
-  placeholderText: "Demo video coming soon",
+  subtitle: "Watch a 60–90 second walkthrough.",
   previewBullets: [
     "Nudges in the moment",
     "Green/yellow/red parent insights",
