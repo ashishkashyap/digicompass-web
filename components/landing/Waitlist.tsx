@@ -98,6 +98,9 @@ export function Waitlist() {
           <p className="mt-1 text-sm text-foreground/85 leading-relaxed max-w-lg">
             {WAITLIST.reassuranceLine}
           </p>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-lg">
+            {WAITLIST.aboveFormLine}
+          </p>
           <form
         onSubmit={handleSubmit}
         className="mt-4 space-y-3.5"

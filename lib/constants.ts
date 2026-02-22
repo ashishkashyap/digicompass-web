@@ -22,7 +22,7 @@ export const HERO = {
     "Fine-grained rules + schedules + categories",
     "No content surveillance",
   ],
-  ctaPrimary: "Join Early Access",
+  ctaPrimary: "Request Early Access",
   ctaSecondary: "See how it works",
 } as const;
 
@@ -147,7 +147,7 @@ export const DEMO = {
     "Green/yellow/red parent insights",
     "Schedules + categories + per-site/app rules",
   ],
-  ctaLabel: "Join Early Access",
+  ctaLabel: "Request Early Access",
   reinforcementTitle: "Why families are joining early access",
   reinforcementBullets: [
     "Earn bonus time for learning",
@@ -183,6 +183,8 @@ export const WAITLIST = {
     "Onboarding in small groups. One month free.",
   reassuranceLine:
     "Among the first to shape a calmer digital routine.",
+  aboveFormLine:
+    "Currently onboarding a limited number of families before public launch.",
   belowButtonLine: "Limited beta spots available.",
   privacyLine: "We'll only email about early access. No spam.",
   emailLabel: "Email",
@@ -192,8 +194,8 @@ export const WAITLIST = {
   childAgeOptional: "(optional)",
   biggestChallengeLabel: "Biggest screen-time challenge",
   biggestChallengeOptional: "(optional)",
-  submitLabel: "Join Early Access",
-  submitLoading: "Joining…",
+  submitLabel: "Request Early Access",
+  submitLoading: "Requesting…",
   errors: {
     emptyEmail: "Please enter your email.",
     invalidEmail: "Please enter a valid email address.",

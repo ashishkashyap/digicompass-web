@@ -42,7 +42,7 @@ export function SiteHeader() {
           Digi<span className="inline-block w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[-0.15em] align-middle" aria-hidden />Compass
         </Link>
         <Button variant="primary" size="sm" onClick={scrollToWaitlist} className="shrink-0">
-          Join Early Access
+          Request Early Access
         </Button>
       </div>
     </header>
