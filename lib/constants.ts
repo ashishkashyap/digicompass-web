@@ -2,10 +2,13 @@
  * Landing page copy and form options. Single source of truth for maintainability.
  */
 
-// ——— Hero ———
+// ——— Hero (A/B-ready headline) ———
+export const HERO_VARIANT = "default" as "default" | "structure";
+
 export const HERO = {
   kicker: "Structure, not power struggles.",
   heading: "Guide Screen Time With Purpose.",
+  headingStructure: "Guide Screen Time With Structure — Not Power Struggles.",
   subline:
     "DigiCompass helps families build healthier digital habits through structure, incentives, and calm parental guidance.",
   clarifierLines: [
@@ -17,6 +20,7 @@ export const HERO = {
     "Incentives + nudges (not just blocking)",
     "Green / yellow / red parent insights",
     "Fine-grained rules + schedules + categories",
+    "No content surveillance",
   ],
   ctaPrimary: "Join Early Access",
   ctaSecondary: "See how it works",
@@ -27,8 +31,8 @@ export const SOCIAL_PROOF = {
   heading: null as string | null,
   signals: [
     "Privacy-first — we don't read messages",
+    "No content surveillance",
     "Designed with real families",
-    "Focus on habits, not surveillance",
   ],
 } as const;
 
@@ -47,9 +51,9 @@ export const HOW_IT_WORKS = {
         "Approved challenges and productive time can unlock bonus minutes — with caps you control.",
     },
     {
-      title: "Nudges reduce friction",
+      title: "Nudges help reduce friction",
       description:
-        "Gentle reminders and choice prompts help kids stop earlier, switch tasks, or earn time — before conflict starts.",
+        "Gentle reminders and choice prompts help kids stop earlier, switch tasks, or earn time — to help avoid conflict.",
     },
   ],
 } as const;
@@ -86,6 +90,7 @@ export const PILLARS = {
 // ——— Comparison: Incentives, Not Just Restrictions ———
 export const COMPARISON = {
   heading: "Incentives, Not Just Restrictions.",
+  intro: "Blocking stops behavior. Incentives + nudges help shape habits.",
   traditional: [
     "Hard stop when time runs out",
     "Parents stuck negotiating",
@@ -108,6 +113,15 @@ export const DEMO = {
     "Schedules + categories + per-site/app rules",
   ],
   ctaLabel: "Join Early Access",
+  reinforcementTitle: "Why families are joining early access",
+  reinforcementBullets: [
+    "Incentive-based screen time (earn, don't just block)",
+    "Gentle nudges before limits hit",
+    "Green / Yellow / Red behavior insights",
+    "Fine-grained control per site/app + schedules",
+    "No content surveillance",
+  ],
+  reinforcementCtaCopy: "One month free at launch.",
 } as const;
 
 // ——— Early access strip (tiny, near waitlist) ———
@@ -150,6 +164,14 @@ export const WAITLIST = {
     invalidEmail: "Please enter a valid email address.",
     generic: "Something went wrong. Please try again.",
   },
+  earlyAccessIncludesTitle: "What early access includes",
+  earlyAccessIncludesBullets: [
+    "Beta access before public launch",
+    "One month free at launch",
+    "Help shape features with feedback",
+    "No content surveillance",
+  ],
+  earlyAccessTrustLine: "We don't share your email. Unsubscribe anytime.",
 } as const;
 
 export const CHILD_AGE_OPTIONS: { value: string; label: string }[] = [
@@ -173,7 +195,7 @@ export const CHALLENGE_OPTIONS: { value: string; label: string }[] = [
 export const FAQ_ITEMS = [
   {
     q: "Is DigiCompass a monitoring tool?",
-    a: "No. We focus on guidance and structured boundaries, not surveillance.",
+    a: "No. We focus on guidance and structure — no content surveillance.",
   },
   {
     q: "Does it read my child's messages?",
@@ -185,11 +207,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: "What are nudges?",
-    a: "Gentle, timely prompts that help kids make better choices before limits become conflict.",
+    a: "Gentle, timely prompts that help kids make better choices and can help reduce conflict.",
   },
   {
     q: "What do green/yellow/red insights mean?",
-    a: "Simple signals for patterns and trends. For guidance, not surveillance.",
+    a: "Simple signals for patterns and trends — for guidance, not content surveillance.",
   },
   {
     q: "Can I control specific sites/apps and categories?",

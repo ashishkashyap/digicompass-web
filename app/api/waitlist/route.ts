@@ -61,7 +61,16 @@ export async function POST(request: NextRequest) {
     if (rateLimitMap.size > 500) pruneRateLimitMap();
 
     const body = await request.json();
-    const { email, childAgeRange, biggestChallenge, source } = body ?? {};
+    const {
+      email,
+      childAgeRange,
+      biggestChallenge,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      referrer,
+      source: legacySource,
+    } = body ?? {};
 
     if (!isValidEmail(email)) {
       return NextResponse.json(
@@ -73,6 +82,20 @@ export async function POST(request: NextRequest) {
     const trimmedEmail = (email as string).trim();
     const supabase = createSupabaseServerClient();
 
+    const hasAttribution =
+      utm_source != null ||
+      utm_medium != null ||
+      utm_campaign != null ||
+      referrer != null;
+    const sourceValue = hasAttribution
+      ? JSON.stringify({
+          utm_source: utm_source ?? null,
+          utm_medium: utm_medium ?? null,
+          utm_campaign: utm_campaign ?? null,
+          referrer: referrer ?? null,
+        })
+      : legacySource ?? null;
+
     const { error } = await supabase
       .schema("DigiCompass")
       .from("waitlist_signups")
@@ -80,7 +103,7 @@ export async function POST(request: NextRequest) {
         email: trimmedEmail,
         child_age_range: childAgeRange ?? null,
         biggest_challenge: biggestChallenge ?? null,
-        source: source ?? null,
+        source: sourceValue,
       });
 
     if (error) {

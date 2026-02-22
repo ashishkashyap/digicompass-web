@@ -3,7 +3,7 @@
 import { track } from "@/lib/track";
 import { Section } from "@/components/landing/Section";
 import { Button } from "@/components/ui/Button";
-import { HERO } from "@/lib/constants";
+import { HERO, HERO_VARIANT } from "@/lib/constants";
 
 export function Hero() {
   const scrollTo = (id: string) => () => {
@@ -35,7 +35,7 @@ export function Hero() {
           id="hero-heading"
           className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground tracking-tight leading-[1.12] prose-heading"
         >
-          {HERO.heading}
+          {HERO_VARIANT === "structure" ? HERO.headingStructure : HERO.heading}
         </h1>
         <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-loose max-w-xl">
           {HERO.subline}

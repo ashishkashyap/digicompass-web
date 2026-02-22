@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { track } from "@/lib/track";
 import { Button } from "@/components/ui/Button";
@@ -9,6 +9,7 @@ import {
   CHILD_AGE_OPTIONS,
   CHALLENGE_OPTIONS,
 } from "@/lib/constants";
+import { getAttributionForSend } from "@/lib/attribution";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -16,34 +17,10 @@ function isValidEmail(value: string): boolean {
   return value.trim() !== "" && EMAIL_REGEX.test(value.trim());
 }
 
-function getCaptureSource(): string {
-  if (typeof window === "undefined") return "";
-  const params = new URLSearchParams(window.location.search);
-  const utmSource = params.get("utm_source")?.trim() ?? "";
-  const utmMedium = params.get("utm_medium")?.trim() ?? "";
-  const utmCampaign = params.get("utm_campaign")?.trim() ?? "";
-  if (utmSource || utmMedium || utmCampaign) {
-    return `utm_source=${utmSource};utm_medium=${utmMedium};utm_campaign=${utmCampaign}`;
-  }
-  const referrer = document.referrer?.trim();
-  if (!referrer) return "";
-  try {
-    const hostname = new URL(referrer).hostname;
-    return hostname ? `referrerHost=${hostname}` : "";
-  } catch {
-    return "";
-  }
-}
-
 export function Waitlist() {
   const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [source, setSource] = useState("");
-
-  useEffect(() => {
-    setSource(getCaptureSource());
-  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -65,6 +42,7 @@ export function Waitlist() {
     setStatus("loading");
     setErrorMessage("");
 
+    const attribution = getAttributionForSend();
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
@@ -73,7 +51,10 @@ export function Waitlist() {
           email,
           childAgeRange: formData.get("childAgeRange") || undefined,
           biggestChallenge: formData.get("biggestChallenge") || undefined,
-          source: source || undefined,
+          utm_source: attribution.utm_source,
+          utm_medium: attribution.utm_medium,
+          utm_campaign: attribution.utm_campaign,
+          referrer: attribution.referrer,
         }),
       });
 
@@ -88,7 +69,10 @@ export function Waitlist() {
       const alreadyExists = Boolean(data.alreadyExists);
       track("waitlist_submit_success", {
         alreadyExists,
-        source: source || undefined,
+        utm_source: attribution.utm_source,
+        utm_medium: attribution.utm_medium,
+        utm_campaign: attribution.utm_campaign,
+        referrer: attribution.referrer,
       });
 
       router.push(`/thanks?email=${encodeURIComponent(email)}`);
@@ -99,20 +83,22 @@ export function Waitlist() {
   }
 
   return (
-    <div className="rounded-3xl border border-stone-200/60 bg-white p-4 sm:p-6 shadow-card max-w-xl">
-      <h2
-        id="waitlist-heading"
-        className="text-xl font-bold text-foreground tracking-tight prose-heading section-title"
-      >
-        {WAITLIST.heading}
-      </h2>
-      <p className="mt-1.5 text-sm text-muted-foreground leading-loose max-w-lg">
-        {WAITLIST.subline}
-      </p>
-      <p className="mt-1 text-sm text-foreground/85 leading-relaxed max-w-lg">
-        {WAITLIST.reassuranceLine}
-      </p>
-      <form
+    <div className="rounded-3xl border border-stone-200/60 bg-white p-4 sm:p-6 shadow-card max-w-3xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="min-w-0">
+          <h2
+            id="waitlist-heading"
+            className="text-xl font-bold text-foreground tracking-tight prose-heading section-title"
+          >
+            {WAITLIST.heading}
+          </h2>
+          <p className="mt-1.5 text-sm text-muted-foreground leading-loose max-w-lg">
+            {WAITLIST.subline}
+          </p>
+          <p className="mt-1 text-sm text-foreground/85 leading-relaxed max-w-lg">
+            {WAITLIST.reassuranceLine}
+          </p>
+          <form
         onSubmit={handleSubmit}
         className="mt-4 space-y-3.5"
         noValidate
@@ -205,12 +191,35 @@ export function Waitlist() {
           {status === "loading" ? WAITLIST.submitLoading : WAITLIST.submitLabel}
         </Button>
       </form>
-      <p className="mt-3 text-xs text-muted-foreground/90 max-w-md leading-relaxed">
-        {WAITLIST.belowButtonLine}
-      </p>
-      <p className="mt-2 text-xs text-muted-foreground/80 max-w-md leading-relaxed">
-        {WAITLIST.privacyLine}
-      </p>
+          <p className="mt-3 text-xs text-muted-foreground/90 max-w-md leading-relaxed">
+            {WAITLIST.belowButtonLine}
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground/80 max-w-md leading-relaxed">
+            {WAITLIST.privacyLine}
+          </p>
+        </div>
+
+        <div className="lg:pt-0 pt-2 border-t lg:border-t-0 lg:border-l border-stone-200/60 lg:pl-8">
+          <h3 className="text-sm font-bold text-foreground tracking-tight mb-2.5">
+            {WAITLIST.earlyAccessIncludesTitle}
+          </h3>
+          <ul className="space-y-1.5 text-sm text-muted-foreground" role="list">
+            {WAITLIST.earlyAccessIncludesBullets.map((text, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="mt-0.5 shrink-0 text-accent" aria-hidden>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                {text}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2.5 text-xs text-muted-foreground/80 leading-relaxed">
+            {WAITLIST.earlyAccessTrustLine}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

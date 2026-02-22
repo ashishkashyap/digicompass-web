@@ -3,16 +3,19 @@ import { COMPARISON } from "@/lib/constants";
 
 export function Comparison() {
   return (
-    <Section ariaLabelledBy="comparison-heading" className="pt-8 sm:pt-9">
+    <Section ariaLabelledBy="comparison-heading" className="pt-5 sm:pt-6 pb-5 sm:pb-6">
       <h2
         id="comparison-heading"
-        className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-4 prose-heading section-title"
+        className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-2 prose-heading section-title"
       >
         {COMPARISON.heading}
       </h2>
+      <p className="text-sm text-muted-foreground leading-snug mb-3 max-w-2xl">
+        {COMPARISON.intro}
+      </p>
       <div className="max-w-2xl rounded-xl border border-stone-200/60 bg-white overflow-hidden">
         <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-stone-200/60">
-          <div className="px-4 py-3 sm:py-4">
+          <div className="px-4 py-2.5 sm:py-3">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
               Traditional
             </h3>
@@ -31,7 +34,7 @@ export function Comparison() {
               ))}
             </ul>
           </div>
-          <div className="px-4 py-3 sm:py-4">
+          <div className="px-4 py-2.5 sm:py-3">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-2">
               DigiCompass
             </h3>

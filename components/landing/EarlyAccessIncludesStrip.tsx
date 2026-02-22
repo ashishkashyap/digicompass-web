@@ -11,11 +11,6 @@ export function EarlyAccessIncludesStrip() {
           <li key={i} className="flex items-center gap-1.5">
             <span className="flex h-1 w-1 shrink-0 rounded-full bg-stone-400" aria-hidden />
             <span>{item.text}</span>
-            {item.rollingOut && (
-              <span className="text-[10px] text-muted-foreground/75 font-normal normal-case italic">
-                — rolling out
-              </span>
-            )}
           </li>
         ))}
       </ul>

@@ -8,6 +8,7 @@ import { Section } from "@/components/landing/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { EarlyAccessStrip } from "@/components/landing/EarlyAccessStrip";
 import { EarlyAccessIncludesStrip } from "@/components/landing/EarlyAccessIncludesStrip";
+import { TrackLandingView } from "@/components/landing/TrackLandingView";
 import { TrackWaitlistView } from "@/components/landing/TrackWaitlistView";
 import { Waitlist } from "@/components/landing/Waitlist";
 import { FAQ } from "@/components/landing/FAQ";
@@ -15,6 +16,7 @@ import { FAQ } from "@/components/landing/FAQ";
 export default function Home() {
   return (
     <main className="flex flex-col flex-1">
+      <TrackLandingView />
       <Hero />
       <SocialProof />
       <HowItWorks />
