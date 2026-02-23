@@ -7,7 +7,7 @@ export function trackMetaLead(payload: {
   biggestChallenge?: string;
 }): void {
   if (typeof window === "undefined") return;
-  const fbq = (window as any).fbq;
+  const fbq = (window as unknown as { fbq?: (a: string, b: string, c?: object) => void }).fbq;
   if (typeof fbq !== "function") return;
   fbq("track", "Lead", {
     child_age: payload.childAgeRange || "",

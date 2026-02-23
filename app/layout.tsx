@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Script from "next/script";
 import { Nunito_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -53,8 +54,11 @@ export default function RootLayout({
             fbq('init', '1233236775540937');
           `}
         </Script>
-        <MetaPixelPageView />
+        <Suspense fallback={null}>
+          <MetaPixelPageView />
+        </Suspense>
         <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element -- Meta Pixel 1x1 tracking beacon, next/image not applicable */}
           <img
             height={1}
             width={1}
