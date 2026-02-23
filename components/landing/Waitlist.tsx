@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { track } from "@/lib/track";
+import { trackMetaLead } from "@/lib/metaPixel";
 import { Button } from "@/components/ui/Button";
 import {
   WAITLIST,
@@ -73,6 +74,10 @@ export function Waitlist() {
         utm_medium: attribution.utm_medium,
         utm_campaign: attribution.utm_campaign,
         referrer: attribution.referrer,
+      });
+      trackMetaLead({
+        childAgeRange: String(formData.get("childAgeRange") || ""),
+        biggestChallenge: String(formData.get("biggestChallenge") || ""),
       });
 
       router.push(`/thanks?email=${encodeURIComponent(email)}`);
